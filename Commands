@@ -1,0 +1,26 @@
+	if args=="descript" then
+		local scriptsremoved=descript()
+		message(`Deleted `..scriptsremoved..` scripts.`)
+	elseif args=="kick" then
+		local plr=getplr(_2)
+		plr:Destroy()
+	elseif args=="loadchar" then
+		local plr=getplr(_2)
+		plr:LoadCharacter()
+	elseif args=="exe" then
+
+	elseif args=="public" then
+		if _2=="all" then
+			publicall()
+			return
+		end
+		local plr=getplr(_2)
+		game:GetService("TeleportService"):Teleport(game.PlaceId,plr)
+	elseif args=="private" then
+		if _2=="all" then
+			privateall()
+			return
+		end
+		local plr=getplr(_2)
+		private(plr)
+	end
